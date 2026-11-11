@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2526430753681683355}
   - component: {fileID: 6280167845244702318}
   - component: {fileID: -6196159085905895564}
+  - component: {fileID: 1715005470436804322}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -138,6 +139,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
   damage: 10
+--- !u!114 &1715005470436804322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775813012102639430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099b023f0d916854bb5e60c070d17d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  projectilePrefab: {fileID: 7047333233492665245, guid: 2e956a288b2e1f84391439e3995f7913, type: 3}
+  projectileSpeed: -10
+  projectileLifetime: 5
+  fireRate: 1
+  useAI: 1
+  isFiring: 0
 --- !u!1 &6516911656721421896
 GameObject:
   m_ObjectHideFlags: 0

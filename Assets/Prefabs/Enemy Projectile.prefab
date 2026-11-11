@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3524286183687052247}
   - component: {fileID: 5613979085540694101}
   - component: {fileID: 289063437871887262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 4621803956786733028}
   - component: {fileID: 1743722514600601388}
   - component: {fileID: 3671378089016150254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
