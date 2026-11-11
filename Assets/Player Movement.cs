@@ -7,14 +7,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rightBoundPadding = 0.5f;
     [SerializeField] float topBoundPadding = 0.5f;
     [SerializeField] float bottomBoundPadding = 0.5f;
+
+    Shooter playerShooter;
     InputAction moveAction;
+    InputAction fireAction;
 
     Vector3 moveVector;
     Vector2 minBounds;
     Vector2 maxBounds;
     void Start()
     {
+        playerShooter = GetComponent<Shooter>();
+
         moveAction = InputSystem.actions.FindAction("Move");
+        fireAction = InputSystem.actions.FindAction("Fire");
 
         InitBounds();
     }
@@ -40,5 +46,10 @@ public class PlayerMovement : MonoBehaviour
         newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y + bottomBoundPadding, maxBounds.y - topBoundPadding);
 
         transform.position = newPosition;
+    }
+
+    void FireShooter()
+    {
+        playerShooter.isFiring = fireAction.IsPressed();
     }
 }
