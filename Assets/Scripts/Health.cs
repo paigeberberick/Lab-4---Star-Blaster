@@ -51,4 +51,9 @@ public class Health : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
+    public int GetHealth()
+    {
+        return health;
+    }
 }
