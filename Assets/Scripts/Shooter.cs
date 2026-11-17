@@ -13,9 +13,11 @@ public class Shooter : MonoBehaviour
 
     [HideInInspector] public bool isFiring;
     Coroutine fireCoroutine;
+    AudioManager audioManager;
 
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         // Explicitly start false for the player, true only for AI
         isFiring = useAI;
     }
@@ -53,6 +55,8 @@ public class Shooter : MonoBehaviour
             projectileRB.linearVelocityY = projectileSpeed;
 
             Destroy(projectile, projectileLifetime);
+
+            audioManager.PlayShootingSFX();
 
             yield return new WaitForSeconds(fireRate);
         }
