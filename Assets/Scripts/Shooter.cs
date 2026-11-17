@@ -14,22 +14,43 @@ public class Shooter : MonoBehaviour
     [HideInInspector] public bool isFiring;
     Coroutine fireCoroutine;
     AudioManager audioManager;
+    float nextFireTime;
 
     void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
-        // Explicitly start false for the player, true only for AI
+        audioManager = Object.FindAnyObjectByType<AudioManager>();
         isFiring = useAI;
     }
 
     void Update()
     {
-        if (!useAI)
+        if (useAI)
         {
-            isFiring = (Keyboard.current != null && Keyboard.current.spaceKey.isPressed)
-                    || (Mouse.current != null && Mouse.current.leftButton.isPressed);
+            Fire(); // enemies keep firing continuously
+            return;
         }
-        Fire();
+
+        // Player: one shot per button press
+        bool pressed = (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+                    || (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame);
+
+        if (pressed && Time.time >= nextFireTime)
+        {
+            nextFireTime = Time.time + fireRate;
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        projectile.GetComponent<Rigidbody2D>().linearVelocityY = projectileSpeed;
+        Destroy(projectile, projectileLifetime);
+
+        if (audioManager != null)
+        {
+            audioManager.PlayShootingSFX();
+        }
     }
 
     void Fire()
@@ -49,15 +70,7 @@ public class Shooter : MonoBehaviour
     {
         while (true)
         {
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-
-            Rigidbody2D projectileRB = projectile.GetComponent<Rigidbody2D>();
-            projectileRB.linearVelocityY = projectileSpeed;
-
-            Destroy(projectile, projectileLifetime);
-
-            audioManager.PlayShootingSFX();
-
+            Shoot();
             yield return new WaitForSeconds(fireRate);
         }
     }
