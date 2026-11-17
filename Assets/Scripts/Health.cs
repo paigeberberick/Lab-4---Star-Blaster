@@ -4,6 +4,14 @@ public class Health : MonoBehaviour
 {
     [SerializeField] int health = 50;
 
+    [SerializeField] bool applyCameraShake;
+    Screenshake camerashake;
+
+    void Start()
+    {
+        camerashake = Camera.main.GetComponent<Screenshake>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         // Check if we hit a damage dealer
@@ -23,6 +31,10 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+        if (applyCameraShake)
+        {
+            camerashake.Play();
         }
     }
 }

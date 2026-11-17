@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Shooter : MonoBehaviour
 {
@@ -10,18 +11,22 @@ public class Shooter : MonoBehaviour
 
     [SerializeField] bool useAI;
 
-    public bool isFiring;
+    [HideInInspector] public bool isFiring;
     Coroutine fireCoroutine;
 
     void Start()
     {
-        if (useAI)
-        {
-            isFiring = true;
-        }
+        // Explicitly start false for the player, true only for AI
+        isFiring = useAI;
     }
+
     void Update()
     {
+        if (!useAI)
+        {
+            isFiring = (Keyboard.current != null && Keyboard.current.spaceKey.isPressed)
+                    || (Mouse.current != null && Mouse.current.leftButton.isPressed);
+        }
         Fire();
     }
 
@@ -53,4 +58,3 @@ public class Shooter : MonoBehaviour
         }
     }
 }
-

@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   health: 50
+  applyCameraShake: 1
 --- !u!114 &7426725232089088598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +143,7 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileLifetime: 5
   fireRate: 0.2
+  useAI: 0
   isFiring: 1
 --- !u!1 &6737225485827420908
 GameObject:
