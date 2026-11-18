@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27cd2233e390d54cbf2528295d78e02, type: 3}
+  m_Name: Wave 7
+  m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
+  enemyPrefabs:
+  - {fileID: 775813012102639430, guid: a81dd81537b2d934085024940331504c, type: 3}
+  - {fileID: 775813012102639430, guid: a81dd81537b2d934085024940331504c, type: 3}
+  - {fileID: 775813012102639430, guid: a81dd81537b2d934085024940331504c, type: 3}
+  - {fileID: 775813012102639430, guid: 455a2b597fb022744a39ea3084328cf2, type: 3}
+  - {fileID: 775813012102639430, guid: a81dd81537b2d934085024940331504c, type: 3}
+  - {fileID: 775813012102639430, guid: a81dd81537b2d934085024940331504c, type: 3}
+  - {fileID: 775813012102639430, guid: a81dd81537b2d934085024940331504c, type: 3}
+  pathPrefab: {fileID: 4094655007982854589, guid: 9a8664a1c2151d347846028df5432c3c, type: 3}
+  enemyMoveSpeed: 5
+  timeBetweenSpawns: 1
+  enemySpawnVariance: 0
+  minimumSpawnTime: 0.2
