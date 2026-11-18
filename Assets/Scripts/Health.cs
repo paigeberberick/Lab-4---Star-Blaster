@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class Health : MonoBehaviour
             scoreKeeper.ModifyScore(scoreValue);
         }
         Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
     }
 
     public int GetHealth()
