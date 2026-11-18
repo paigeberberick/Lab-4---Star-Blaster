@@ -50,8 +50,12 @@ public class Health : MonoBehaviour
         {
             scoreKeeper.ModifyScore(scoreValue);
         }
+
         Destroy(gameObject);
-        SceneManager.LoadScene("GameOver");
+        if (isPlayer)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public int GetHealth()
