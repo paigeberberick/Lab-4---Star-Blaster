@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 197775133}
   - component: {fileID: 197775135}
   - component: {fileID: 197775134}
+  - component: {fileID: 197775136}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -446,7 +447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your Final score was:  123456789'
+  m_text: 'Final Score: 123456789'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4fe26a2873cdb534f84e3b456d1002fc, type: 2}
   m_sharedMaterial: {fileID: 1072006341071796563, guid: 4fe26a2873cdb534f84e3b456d1002fc, type: 2}
@@ -526,6 +527,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197775132}
   m_CullTransparentMesh: 1
+--- !u!114 &197775136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197775132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a6cbd8b435f64eb73208f8ff31a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIGameOver
+  scoreText: {fileID: 197775134}
 --- !u!1 &240296537
 GameObject:
   m_ObjectHideFlags: 0

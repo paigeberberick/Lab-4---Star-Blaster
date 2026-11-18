@@ -11,7 +11,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField][Range(0, 1)] float damageVolume = 0.5f;
 
     static AudioManager instance;
-    public static AudioManager Instance => instance;
 
     void Awake()
     {
